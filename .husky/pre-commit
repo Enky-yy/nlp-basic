@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run Ruff (linter + formatter)
+ruff check --fix .
+ruff format .
+
+# Run type checking
+mypy .
+
+# Run tests
+pytest   
